@@ -13,10 +13,10 @@ I got a [Coral USB accelerator](https://coral.withgoogle.com/products/accelerato
 
 But I found no way to reproduce them, so I wrote these two scripts. With `python3 label_image_coral.py -c 50 -m classification_model`, I can get
 
-|Model architecture | Dev Board with Edge TPU |
-|:------------------|------------------------:|
-|MobileNet v1	| 2.51 ms|
-|MobileNet v2	| 2.69 ms|
-|Inception v1	| 4.23 ms|
-|Inception v4	| 101.87 ms|
+|Model architecture | 	iMac 2015 CPU + USB Accelerator (USB 3.0) with Edge TPU	| Dev Board with Edge TPU |
+|:------------------|------------------------:|------------------------:|
+|MobileNet v1	| 3.10 ms|2.51 ms|
+|MobileNet v2	| 3.20 ms|2.69 ms|
+|Inception v1	| 4.10 ms|4.23 ms|
+|Inception v4	| 92.32 ms|101.87 ms|
 
