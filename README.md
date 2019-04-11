@@ -11,4 +11,4 @@ I got a [Coral USB accelerator](https://coral.withgoogle.com/products/accelerato
 |Inception v4	|792 ms	| 100 ms	|3,463 ms	|100 ms|
 
 
-But I found no way to reproduce them, so I wrong these two scripts.
+But I found no way to reproduce them, so I wrote these two scripts.
