@@ -11,4 +11,12 @@ I got a [Coral USB accelerator](https://coral.withgoogle.com/products/accelerato
 |Inception v4	|792 ms	| 100 ms	|3,463 ms	|100 ms|
 
 
-But I found no way to reproduce them, so I wrote these two scripts.
+But I found no way to reproduce them, so I wrote these two scripts. With `python3 label_image_coral.py -c 50 -m classification_model`, I can get
+
+|Model architecture | Dev Board with Edge TPU |
+|:------------------|------------------------:|
+|MobileNet v1	| 2.51 ms|
+|MobileNet v2	| 2.69 ms|
+|Inception v1	| 4.23 ms|
+|Inception v4	| 101.87 ms|
+
