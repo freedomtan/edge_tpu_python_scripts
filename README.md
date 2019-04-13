@@ -20,3 +20,15 @@ But I found no way to reproduce them, so I wrote these two scripts. With `python
 |Inception v1	| 3.74 ms| 4.10 ms|4.23 ms|
 |Inception v4	| 84.93 ms| 92.32 ms| 101.87 ms|
 
+With Edge TPU C++ API, I can get
+
+|Model architecture | iMac 2015 CPU + USB Accelerator (USB 3.0) with Edge TPU	| Macbook Pro 13-inch 2018 CPU + USB Accelerator (USB 3.0) with Edge TPU	| Dev Board with Edge TPU | Dev Board Edge TPU C++ API |
+|:------------|-------:|-------:|------:|------:|
+|MobileNet v1	| 2.91 ms| 3.10 ms|2.51 ms|2.24 ms| 
+|MobileNet v2	| 3.01 ms| 3.20 ms|2.69 ms|2.45 ms|
+|Inception v1	| 3.74 ms| 4.10 ms|4.23 ms|3.77 ms|
+|Inception v4	| 84.93 ms| 92.32 ms| 101.87 ms| 101.63 ms|
+
+
+
+The [label_image using Edge TPU C++ API](https://github.com/freedomtan/edgetpu-native/)
