@@ -31,4 +31,4 @@ With Edge TPU C++ API, I can get
 
 
 
-The [label_image using Edge TPU C++ API](https://github.com/freedomtan/edgetpu-native/)
+The [label_image using Edge TPU C++ API](https://github.com/freedomtan/edgetpu-native/) I used to test the C++ API.
