@@ -8,6 +8,7 @@ import argparse
 import numpy as np
 import time
 
+from edgetpu.basic import edgetpu_utils
 from edgetpu.classification.engine import ClassificationEngine
 from PIL import Image
 
@@ -32,10 +33,17 @@ if __name__ == "__main__":
   parser.add_argument("-k", "--top_k", default=5, help="top_k")
   parser.add_argument("-t", "--threshold", default=0.0, help="threshold")
   parser.add_argument("-c", "--loop_counts", default=1, help="loop counts")
+  parser.add_argument("-d", "--device_path", help="device_path")
   args = parser.parse_args()
 
-  engine = ClassificationEngine(args.model_file)
-  #print("driver version:", engine.get_driver_version())
+  if args.device_path:
+    engine = ClassificationEngine(args.model_file, device_path=args.device_path)
+  else:
+    engine = ClassificationEngine(args.model_file)
+  print("driver version:", edgetpu_utils.GetRuntimeVersion())
+  print("available tpus:",
+    edgetpu_utils.ListEdgeTpuPaths(edgetpu_utils.EDGE_TPU_STATE_NONE))
+  print("device path:", engine.device_path())
 
   input_tensor_shape = engine.get_input_tensor_shape()
   if (input_tensor_shape.size != 4 or input_tensor_shape[3] != 3 or
