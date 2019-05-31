@@ -34,6 +34,8 @@ if __name__ == "__main__":
   parser.add_argument("-t", "--threshold", default=0.0, help="threshold")
   parser.add_argument("-c", "--loop_counts", default=1, help="loop counts")
   parser.add_argument("-d", "--device_path", help="device_path")
+  parser.add_argument("-b", "--input_mean", default=127.5, help="input_mean")
+  parser.add_argument("-s", "--input_std", default=127.5, help="input standard deviation")
   args = parser.parse_args()
 
   if args.device_path:
@@ -56,6 +58,9 @@ if __name__ == "__main__":
 
   input_tensor = np.asarray(img).flatten()
 
+  if floating_model:
+    input_tensor = (np.float32(input_tensor) - args.input_mean) / args.input_std
+
   loop_counts = int(args.loop_counts)
   if (loop_counts > 1):
     for a in range(5):
@@ -76,4 +81,7 @@ if __name__ == "__main__":
       result.append((i, raw_results[i]))
   result.sort(key=lambda tup: -tup[1])
   for r in result[:top_k]:
-    print('{0:08.6f}'.format(r[1])+":", labels[r[0]])
+    if floating_model:
+      print('{0:08.6f}'.format(r[1])+":", labels[r[0]])
+    else:
+      print('{0:08.6f}'.format(r[1])+":", labels[r[0]])

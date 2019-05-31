@@ -1,6 +1,6 @@
 First, get pre-trained MobileNet SSD model(s), e.g.,
 ```
-curl http://storage.googleapis.com/cloud-iot-edge-pretrained-models/canned_models/mobilenet_ssd_v1_coco_quant_postprocess_edgetpu.tflite -o /tmp/mobilenet_ssd_v1_coco_quant_postprocess_edgetpu.tflite
+curl https://storage.googleapis.com/cloud-iot-edge-pretrained-models/canned_models/mobilenet_ssd_v1_coco_quant_postprocess_edgetpu.tflite -o /tmp/mobilenet_ssd_v1_coco_quant_postprocess_edgetpu.tflite
 
 curl https://storage.googleapis.com/download.tensorflow.org/models/tflite/coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip -o /tmp/coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip
 
