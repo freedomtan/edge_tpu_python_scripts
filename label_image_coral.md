@@ -18,14 +18,17 @@ curl https://storage.googleapis.com/cloud-iot-edge-pretrained-models/canned_mode
 Run
 
 ```
-$ python3 label_image_coral.py  -c 100
+$ python3 label_image_coral.py
 
 ```
 
 We can get results like
 
 ```
-time:  13.17286491394043
+driver version: BuildLabel(N/A), RuntimeVersion(10)
+available tpus: ('/dev/apex_0',)
+device path: /dev/apex_0
+time:  14.308691024780273
 0.671875: 653:military uniform
 0.128906: 907:Windsor tie
 0.039062: 458:bow tie, bow-tie, bowtie
@@ -41,11 +44,13 @@ $ python3 label_image_coral.py  -c 100
 
 We can get results like
 ```
-time:  2.9425740242004395
+driver version: BuildLabel(N/A), RuntimeVersion(10)
+available tpus: ('/dev/apex_0',)
+device path: /dev/apex_0
+time:  2.723410129547119
 0.671875: 653:military uniform
 0.128906: 907:Windsor tie
 0.039062: 458:bow tie, bow-tie, bowtie
 0.027344: 668:mortarboard
 0.019531: 466:bulletproof vest
-
 ```
